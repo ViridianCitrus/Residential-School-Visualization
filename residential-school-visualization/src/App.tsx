@@ -1,24 +1,34 @@
 import React from 'react';
-import logo from './logo.svg';
+import Grid from '@material-ui/core/Grid';
 import './App.css';
+import { grid } from '@material-ui/system';
+import rs1 from './img/RS1.jpg';
 
 function App() {
   return (
     <div className="App">
       <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
         <p>
-          Edit <code>src/App.tsx</code> and save to reload.
+          Residential School Visualization
         </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
       </header>
+      <body >
+        <p style={{
+          fontSize: "40px"
+        }}>Let's learn about residential schools</p>
+        <Grid container>
+          <Grid item xs={5}>
+            <img src={rs1} className="photo" />
+          </Grid>
+          <Grid item xs={5}>
+            First opened in 1831, residential schools were one of Canada's darkest moments in history.
+            These schools were used as a tool for Canada's plan of "aggressive assimilation" and colonization of
+            Indigenous Peoples and territories in Canada. Indigenous children were removed from their families, and forced
+            to remove their culture and traditions. With the closure of the last school in 1996, these schools have
+            seen upwards of 150,000 students enrolled.
+          </Grid>
+        </Grid>
+      </body>
     </div>
   );
 }
