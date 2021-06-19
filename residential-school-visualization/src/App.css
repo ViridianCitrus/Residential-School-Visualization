@@ -36,3 +36,12 @@
     transform: rotate(360deg);
   }
 }
+
+/*
+ Due to issues with webpack + leaflet, all leaflet will be in this file for now
+ source: https://stackoverflow.com/a/60993845/13808958
+ */
+.leaflet-container {
+  width: 100%; 
+  height: 100%;
+}

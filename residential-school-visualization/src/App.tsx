@@ -1,6 +1,14 @@
-import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import React from "react";
+import logo from "./logo.svg";
+import { Map } from "./Map";
+import "./App.css";
+
+// leaflet css
+import "leaflet/dist/leaflet.css";
+// needed to make image markers work on leaflet maps with webpack bundler
+// source: https://github.com/ghybs/leaflet-defaulticon-compatibility
+import "leaflet-defaulticon-compatibility/dist/leaflet-defaulticon-compatibility.webpack.css"; // Re-uses images from ~leaflet package
+import "leaflet-defaulticon-compatibility";
 
 function App() {
   return (
@@ -18,6 +26,7 @@ function App() {
         >
           Learn React
         </a>
+        <Map />
       </header>
     </div>
   );
