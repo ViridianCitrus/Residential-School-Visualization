@@ -10,6 +10,8 @@ import "leaflet/dist/leaflet.css";
 import "leaflet-defaulticon-compatibility/dist/leaflet-defaulticon-compatibility.webpack.css"; // Re-uses images from ~leaflet package
 import "leaflet-defaulticon-compatibility";
 
+import { Schools } from "./Schools/Schools";
+
 function App() {
   return (
     <div className="App">
@@ -24,12 +26,13 @@ function App() {
           target="_blank"
           rel="noopener noreferrer"
         >
-          Learn React
+          Learn React asdasd
         </a>
       </header> */}
       <div style={{ height: "500px" }}>
         <Map />
       </div>
+      <Schools />
     </div>
   );
 }
