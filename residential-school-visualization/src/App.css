@@ -1,5 +1,27 @@
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Lora&display=swap');
+
+p {
+  font-family: 'Open Sans';
+}
+
+h1 {
+  font-family: 'Lora';
+  font-size: larger;
+}
+
+h2.during-page {
+  
+}
+
+.bold {
+  font-weight: bold;
+}
+
 .App {
-  text-align: center;
+  text-align: left;
+  height: 100vh;
+  overflow: scroll;
 }
 
 .App-logo {
@@ -39,4 +61,22 @@
   to {
     transform: rotate(360deg);
   }
+}
+
+.map-div {
+  height: 100%;
+  width: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/*
+ Due to issues with webpack + leaflet, all leaflet will be in this file for now
+ source: https://stackoverflow.com/a/60993845/13808958
+ */
+.leaflet-container {
+  width: 100%; 
+  height: 100%;
+  z-index: 1;
 }
