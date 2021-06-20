@@ -2,7 +2,9 @@ import React from "react";
 import { getSchools, School } from "../Schools/Schools";
 import { Slider } from "@material-ui/core";
 import { Map } from "../Map";
-import { Container, Grid } from "@material-ui/core";
+import { Container, Grid, Button } from "@material-ui/core";
+import ArrowForwardIcon from "@material-ui/icons/ArrowForward";
+import ArrowBackIcon from "@material-ui/icons/ArrowBack";
 
 function SchoolData() {
   const [yearValue, setYearValue] = React.useState<number | number[]>(1900);
@@ -25,7 +27,22 @@ function SchoolData() {
   return (
     <>
       <Container>
-        <h2 className="during-page">During Residential Schools</h2>
+        <Grid container alignItems="center" justify="center">
+          <Grid item>
+            <Button variant="text" style={{ padding: 0, width: "20px" }}>
+              <ArrowBackIcon />
+            </Button>
+          </Grid>
+          <Grid item xs={3}>
+            <h2 className="during-page">During Residential Schools</h2>
+          </Grid>
+          <Grid item>
+            <Button variant="text" style={{ padding: 0, width: "20px" }}>
+              <ArrowForwardIcon />
+            </Button>
+          </Grid>
+        </Grid>
+
         <p className="during-page">
           More schools were built over the years, totalling up to 130 schools
           across the country between 1831 and 1996. Earlier schools were very
