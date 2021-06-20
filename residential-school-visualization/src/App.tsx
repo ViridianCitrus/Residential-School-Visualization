@@ -5,7 +5,9 @@ import "./App.css";
 import { BrowserRouter, Route, Switch } from "react-router-dom";
 
 import { Home } from "./components/Home";
-import SchoolData from "./components/SchoolData";
+import Before from "./components/Before";
+import During from "./components/During";
+import After from "./components/After";
 // import {Layout} from "./components/Layout";
 import { Error } from "./components/Error";
 
@@ -26,7 +28,9 @@ const App: React.FC = () => {
         {/* <Layout /> */}
         <Switch>
           <Route path="/" component={Home} exact />
-          <Route path="/school-data" component={SchoolData} />
+          <Route path="/history/beforeschools" component={Before} />
+          <Route path="/history/duringschools" component={During} />
+          <Route path="/history/afterschools" component={After} />
           <Route component={Error} />
         </Switch>
       </div>
