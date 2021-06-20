@@ -1,36 +1,38 @@
-import React from 'react';
-import Grid from '@material-ui/core/Grid';
-import './App.css';
-import { grid } from '@material-ui/system';
-import rs1 from './img/RS1.jpg';
+import React from "react";
+import { Home } from "./components/Home";
 
-function App() {
+const App: React.FC = () => {
   return (
-    <div className="App">
-      <header className="App-header">
-        <p>
-          Residential School Visualization
-        </p>
-      </header>
-      <body >
-        <p style={{
-          fontSize: "40px"
-        }}>Let's learn about residential schools</p>
-        <Grid container>
-          <Grid item xs={5}>
-            <img src={rs1} className="photo" />
-          </Grid>
-          <Grid item xs={5}>
-            First opened in 1831, residential schools were one of Canada's darkest moments in history.
-            These schools were used as a tool for Canada's plan of "aggressive assimilation" and colonization of
-            Indigenous Peoples and territories in Canada. Indigenous children were removed from their families, and forced
-            to remove their culture and traditions. With the closure of the last school in 1996, these schools have
-            seen upwards of 150,000 students enrolled.
-          </Grid>
-        </Grid>
-      </body>
+    <div>
+      <Home/>
     </div>
   );
 }
-
 export default App;
+
+
+/*import React, { Component } from 'react';
+import { BrowserRouter, Route, Switch } from 'react-router-dom';
+ 
+import Home from './components/Home';
+import SchoolData from './components/SchoolData';
+import Layout from './components/Layout';
+import Error from './components/Error';
+ 
+function App() {
+  return (      
+      <BrowserRouter>
+      <div>
+        <Layout />
+          <Switch>
+            <Route path="/" component={Home} exact/>
+            <Route path="/school-data" component={SchoolData}/>
+          <Route component={Error}/>
+          </Switch>
+      </div> 
+    </BrowserRouter>
+  );
+}
+ 
+export default App;
+*/
