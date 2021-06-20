@@ -5,6 +5,7 @@ import { Map } from "../Map";
 import { Container, Grid, Button } from "@material-ui/core";
 import ArrowForwardIcon from "@material-ui/icons/ArrowForward";
 import ArrowBackIcon from "@material-ui/icons/ArrowBack";
+import { useHistory } from "react-router-dom";
 
 function SchoolData() {
   const [yearValue, setYearValue] = React.useState<number | number[]>(1900);
@@ -23,14 +24,16 @@ function SchoolData() {
   };
 
   const allSchools: Array<School> = getSchools();
-
+  const history = useHistory();
+  const handleForward = () => history.push("/history/afterschools");
+  const handleBackward = () => history.push("/history/beforeschools");
   return (
     <>
       <Container>
         <Grid container alignItems="center" justify="center">
           <Grid item>
             <Button variant="text" style={{ padding: 0, width: "20px" }}>
-              <ArrowBackIcon />
+              <ArrowBackIcon onClick={handleBackward} />
             </Button>
           </Grid>
           <Grid item xs={3}>
@@ -38,7 +41,7 @@ function SchoolData() {
           </Grid>
           <Grid item>
             <Button variant="text" style={{ padding: 0, width: "20px" }}>
-              <ArrowForwardIcon />
+              <ArrowForwardIcon onClick={handleForward} />
             </Button>
           </Grid>
         </Grid>

@@ -5,8 +5,11 @@ import { Map } from "../Map";
 import { Container, Grid, Button } from "@material-ui/core";
 import ArrowForwardIcon from "@material-ui/icons/ArrowForward";
 import ArrowBackIcon from "@material-ui/icons/ArrowBack";
+import { useHistory } from "react-router-dom";
 
 function SchoolData() {
+  const history = useHistory();
+  const handleForward = () => history.push("/history/duringschools");
   return (
     <>
       <Container>
@@ -16,7 +19,7 @@ function SchoolData() {
           </Grid>
           <Grid item>
             <Button variant="text" style={{ padding: 0, width: "20px" }}>
-              <ArrowForwardIcon />
+              <ArrowForwardIcon onClick={handleForward} />
             </Button>
           </Grid>
         </Grid>

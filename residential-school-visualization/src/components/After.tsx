@@ -2,15 +2,20 @@ import React from "react";
 import { Container, Grid, Button } from "@material-ui/core";
 import ArrowForwardIcon from "@material-ui/icons/ArrowForward";
 import ArrowBackIcon from "@material-ui/icons/ArrowBack";
+import ReactPlayer from "react-player/youtube";
+import { useHistory } from "react-router-dom";
 
 function SchoolData() {
+  const history = useHistory();
+  const handleForward = () => history.push("/resources");
+  const handleBackward = () => history.push("/history/duringschools");
   return (
     <>
       <Container>
         <Grid container alignItems="center" justify="center">
           <Grid item>
             <Button variant="text" style={{ padding: 0, width: "20px" }}>
-              <ArrowBackIcon />
+              <ArrowBackIcon onClick={handleBackward} />
             </Button>
           </Grid>
           <Grid item xs={3}>
@@ -18,7 +23,7 @@ function SchoolData() {
           </Grid>
           <Grid item>
             <Button variant="text" style={{ padding: 0, width: "20px" }}>
-              <ArrowForwardIcon />
+              <ArrowForwardIcon onClick={handleForward} />
             </Button>
           </Grid>
         </Grid>
@@ -51,8 +56,14 @@ function SchoolData() {
           During the 1990’s, several residential school survivor groups sued the
           federal government and the churches that ran the schools, which was
           known as one of the largest class action suits in Canadian history. As
-          a result, the Indian Residential Schools Settlement Agreement was
-          established in 2007, paying $1.9 billion in total and implementing
+          a result,{" "}
+          <a
+            href="https://www.thecanadianencyclopedia.ca/en/article/indian-residential-schools-settlement-agreement"
+            target="_blank"
+          >
+            the Indian Residential Schools Settlement Agreement
+          </a>{" "}
+          was established in 2007, paying $1.9 billion in total and implementing
           stating several promises such as funds for healing programs and
           reparition via payment to survivors for all wrongs endured.
         </p>
@@ -64,6 +75,13 @@ function SchoolData() {
           was issued by Prime Minister Stephen Harper in 2008.
         </p>
       </Container>
+      <Grid container justify="center">
+        <ReactPlayer
+          className="during-page"
+          url="https://youtu.be/-ryC74bbrEE"
+          controls
+        />
+      </Grid>
     </>
   );
 }
