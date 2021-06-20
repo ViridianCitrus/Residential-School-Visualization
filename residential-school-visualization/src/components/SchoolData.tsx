@@ -2,6 +2,7 @@ import React from "react";
 import { getSchools, School } from "../Schools/Schools";
 import { Slider } from "@material-ui/core";
 import { Map } from "../Map";
+import { Container, Grid } from "@material-ui/core";
 
 function SchoolData() {
   const [yearValue, setYearValue] = React.useState<number | number[]>(1900);
@@ -22,39 +23,81 @@ function SchoolData() {
   const allSchools: Array<School> = getSchools();
 
   return (
-    <div className="App">
-      <header className="App-header">
-        <p>100 Years</p>
-        <div>
-          {schoolVisible.map((sch, idx) => {
-            return (
-              <li key={idx}>
-                {sch.name +
-                  " " +
-                  sch.yearStart.toString() +
-                  " - " +
-                  sch.yearEnd.toString()}
-              </li>
-            );
-          })}
-        </div>
-      </header>
-      <div className="map-div">
-        <Map />
-      </div>
-      <Slider
-        defaultValue={1900}
-        valueLabelDisplay="auto"
-        value={yearValue}
-        min={1900}
-        max={2000}
-        step={1}
-        onChange={handleYearChange}
+    <>
+      <Container>
+        <h2 className="during-page">During Residential Schools</h2>
+        <p className="during-page">
+          More schools were built over the years, totalling up to 130 schools
+          across the country between 1831 and 1996. Earlier schools were very
+          poorly constructed, managed, and funded, with some being prone to
+          dangerous and serious incidents such as fires. Education quality was
+          very poor since basic curriculum - reading, writing, math, and
+          religion - was only taught and most teachers were not qualified to
+          teach. Students were also forced to spend most of their time working
+          in order to maintain the school buildings and grow food due to
+          underfunding.
+        </p>
+
+        <p className="during-page">
+          Students endured poor living conditions. Many were underfed and became
+          sick with diseases such as tuberculosis and influenza. They were
+          forbidden from wearing traditional clothing, practicing their family’s
+          customs, and speaking and writing in their own language. New names,
+          and often just numbers, were assigned to each student. It was sadly
+          common for students to be punished by staff by being beaten, locked in
+          small spaces, verbally abused, emotionally abused, and sexually
+          assaulted.
+        </p>
+
+        <p className="during-page">
+          Residential schools faced resistance from Indigenous communities
+          throughout the years. Despite many residential school survivors
+          speaking publicly about the abuse they endured, it was not until the
+          late 1980’s that the government began to address them.This did not
+          stop residential schools from operating though, for the last
+          residential school did not close until 1996.
+        </p>
+      </Container>
+
+      <div
         style={{
-          width: 1500,
+          height: "50%",
+          width: "100%",
+          display: "flex",
+          justifyContent: "center",
         }}
-      />
-    </div>
+      >
+        <div className="map-div">
+          <Map schoolVisible={schoolVisible} />
+        </div>
+      </div>
+
+      <div
+        style={{
+          height: "1%",
+          width: "100%",
+          display: "flex",
+          justifyContent: "center",
+        }}
+      >
+        <Slider
+          defaultValue={1900}
+          valueLabelDisplay="on"
+          value={yearValue}
+          min={1900}
+          max={2000}
+          step={1}
+          onChange={handleYearChange}
+          style={{
+            width: "50%",
+            // marginTop: 10,
+            display: "flex",
+            justifyContent: "center",
+            alignItems: "center",
+          }}
+        />
+      </div>
+    </>
   );
 }
 

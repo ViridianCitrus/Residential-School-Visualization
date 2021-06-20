@@ -20,6 +20,9 @@ const App: React.FC = () => {
   return (
     <BrowserRouter>
       <div className="App">
+        <header className="App-header">
+          <h1>Residential School Visualization</h1>
+        </header>
         {/* <Layout /> */}
         <Switch>
           <Route path="/" component={Home} exact />
